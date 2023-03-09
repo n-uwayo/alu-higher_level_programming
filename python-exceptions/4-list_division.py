@@ -1,7 +1,9 @@
-
-
 #!/usr/bin/python3
 
+# This function takes two lists of equal length and returns a new list
+# containing the result of dividing the corresponding elements in the two
+# input lists. If there is a type error, division by zero, or index out
+# of range error, the corresponding element in the output list will be 0.
 
 def list_division(my_list_1, my_list_2, list_length):
     new_list = []
