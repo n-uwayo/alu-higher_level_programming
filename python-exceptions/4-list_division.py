@@ -5,6 +5,7 @@
 # input lists. If there is a type error, division by zero, or index out
 # of range error, the corresponding element in the output list will be 0.
 
+
 def list_division(my_list_1, my_list_2, list_length):
     new_list = []
     for i in range(0, list_length):
