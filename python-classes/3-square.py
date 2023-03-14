@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""Defining class """
+"""Defining class"""
 
 
-class Square: 
+class Square:
     """Representing a square"""
     def __init__(self, size=0):
         """Initializing a new Square"""
