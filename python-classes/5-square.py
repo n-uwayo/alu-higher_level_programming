@@ -5,11 +5,11 @@
 
 class Square:
     """Representa asquare with attribute and methode"""
-    
+
     def __init__(self, size=0):
         """Initialize a new instance of Square class with specified size"""
         self.size = size
-    
+
     @property
     def size(self):
         """Gets the size of the square"""
