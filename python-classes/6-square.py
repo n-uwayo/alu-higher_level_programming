@@ -18,10 +18,10 @@ class Square:
     
     @size.setter
     def size(self, value):
-        """Sets the size of the square
-        Raises:
-        TypeError: If the size is not an integer.
-        ValueError: If the size is less than 0.
+        """Sets the size private attribute value.
+        Validates the assignment of the size private attribute.
+        Arg:
+            value: the value to be set
         """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
@@ -32,13 +32,17 @@ class Square:
     
     @property
     def position(self):
-        """Gets the current position"""
+        """Gets the position private attribute value.
+        Returns:
+            The position private attribute"""
         return self.__position
     
     @position.setter
     def position(self, value):
-        """Sets the position
-        TypeError: If the position is not a tuple of 2 positive integer.
+        """Sets the position private attribute value.
+        Validates the assignment of the position private attribute.
+        Arg:
+            value: the value to be set
         """
         if (not isinstance(value, tuple) or
                 len(value) != 2 or
@@ -48,11 +52,14 @@ class Square:
         self.__position = vallue
 
     def area(self):
-        """compute the area of square"""
+        """A public object method.
+        Returns:
+            The current square area
+        """
         return self.__size ** 2
 
     def my_print(self):
-        """prints the square with the '#' character"""
+        """Displays the square object with '#' character"""
         if self.__size == 0:
             print()
         else:
