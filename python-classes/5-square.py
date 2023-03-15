@@ -10,7 +10,7 @@ class Square:
         Raises: Type Error: If the value is not an integer
             ValueError: If value is less than 0.
         """
-        self.size = size
+        self.__size = size
 
   
     @property
@@ -24,18 +24,18 @@ class Square:
         elif value < 0:
             ValueError("size must be >= 0")
         else:
-            self.size = value
+            self.__size = value
 
     def area(self):
         """calculate the area of square"""
-        return self.size ** 2
+        return self.__size ** 2
 
     def my_print(self):
         """print square with '#'."""
-        if self.size == 0:
+        if self.__size == 0:
             print()
         else:
-            for n in range(self.size):
-                for m in range(self.size):
+            for n in range(self.__size):
+                for m in range(self.__size):
                     print("#", end="")
                 print()
