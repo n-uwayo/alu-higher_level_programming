@@ -7,7 +7,7 @@ class Square:
     """Representing a square"""
 
     def __init__(self, size=0):
-        """Initialization of private attribute '__size' with parameter 'size' """
+        """Initialization of private attribute '__size'"""
         self.__size = size
 
     @property
