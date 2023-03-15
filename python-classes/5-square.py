@@ -24,18 +24,18 @@ class Square:
         elif value < 0:
             ValueError("size must be >= 0")
         else:
-            self.__size = value
+            self.size = value
 
     def area(self):
         """calculate the area of square"""
-        return self.__size ** 2
+        return self.size ** 2
 
     def my_print(self):
         """print square with '#'."""
-        if self.__size == 0:
+        if self.size == 0:
             print()
         else:
-            for n in range(self.__size):
-                for m in range(self.__size):
+            for n in range(self.size):
+                for m in range(self.size):
                     print("#", end="")
                 print()
