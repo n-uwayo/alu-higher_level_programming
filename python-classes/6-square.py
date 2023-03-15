@@ -7,13 +7,13 @@ class Square:
     """Representing a square"""
 
     def __init__(self, size=0, position=(0, 0)):
-        """Initialize a new square"""
+        """An object constructor method."""
         self.size = size
         self.position = position
 
     @property
     def size(self):
-        """Get the current size of the square."""
+        """Gets the size private attribute value."""
         return (self.__size)
     
     @size.setter
