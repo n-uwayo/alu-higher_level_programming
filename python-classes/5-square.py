@@ -15,10 +15,7 @@ class Square:
   
     @property
     def size(self):
-    """Gets the size of square
-    Raises: Type Error: If the value is not an integer
-        ValueError: If value is less than 0. 
-    """
+    """Gets the  current size of the square"""
         return self.__size
 
     @size.setter
@@ -35,11 +32,11 @@ class Square:
             self.__size = value
 
     def area(self):
-    """calculate the area of square"""
+    """Return  the current area of the square"""
         return self.__size ** 2
 
     def my_print(self):
-    """print square with '#'."""
+    """print the square with the '#'."""
         if self.__size == 0:
             print()
         else:
