@@ -14,28 +14,32 @@ class Square:
 
   
     @property
-    def size(self):
-        """Gets the size of square
-       Raises: Type Error: If the value is not an integer
-            ValueError: If value is less than 0. 
-        """
-        if not isinstance(value, int):
-            raise TypeError("size must be an integer")
-        elif value < 0:
-            ValueError("size must be >= 0")
-        else:
-            self.__size = value
+def size(self):
+    """Gets the size of square
+    Raises: Type Error: If the value is not an integer
+        ValueError: If value is less than 0. 
+    """
+    return self.__size
 
-    def area(self):
-        """calculate the area of square"""
-        return self.__size ** 2
+@size.setter
+def size(self, value):
+    if not isinstance(value, int):
+        raise TypeError("size must be an integer")
+    elif value < 0:
+        ValueError("size must be >= 0")
+    else:
+        self.__size = value
 
-    def my_print(self):
-        """print square with '#'."""
-        if self.__size == 0:
+def area(self):
+    """calculate the area of square"""
+    return self.__size ** 2
+
+def my_print(self):
+    """print square with '#'."""
+    if self.__size == 0:
+        print()
+    else:
+        for n in range(self.__size):
+            for m in range(self.__size):
+                print("#", end="")
             print()
-        else:
-            for n in range(self.__size):
-                for m in range(self.__size):
-                    print("#", end="")
-                print()
