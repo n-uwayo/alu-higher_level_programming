@@ -2,6 +2,7 @@
 
 import sys
 
+
 def nqueens(n):
 
     if not isinstance(n, int):
