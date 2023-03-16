@@ -1,8 +1,12 @@
 #!/usr/bin/python3
 """Solves the N-queens puzzle."""
 import sys
-
+"""get access to some variables"""
 def nqueens(n):
+    """
+    Initialize an `n`x`n`represents 
+    the size of the board and the number of queens to be placed
+    """
     if not isinstance(n, int):
         print("N must be a number")
         sys.exit(1)
@@ -11,6 +15,7 @@ def nqueens(n):
         sys.exit(1)
 
     def is_valid(board, row, col):
+        """checks if a queen can be placed on a square in the current row,"""
         for i in range(row):
             if board[i] == col or \
                 board[i] - i == col - row or \
@@ -19,6 +24,7 @@ def nqueens(n):
         return True
 
     def place_queen(board, row):
+        """current state of the board and the current row being processed."""
         if row == n:
             print([[i, board[i]] for i in range(n)])
             return
