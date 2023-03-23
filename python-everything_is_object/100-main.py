@@ -1,6 +1,2 @@
-#!/usr/bin/python3
-magic_string = __import__('100-magic_string').magic_string
-
-for i in range(10):
-    print(magic_string())
-
+def magic_string(iterations):
+    return ", ".join("BestSchool" * i for i in range(1, iterations + 1))
