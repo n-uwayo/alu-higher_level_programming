@@ -5,7 +5,7 @@
 class LockedClass:
 
 
-    """A class that restricts attribute assignment"""
+"""A class that restricts attribute """
 
     __slots__ = ('first_name',)
 
