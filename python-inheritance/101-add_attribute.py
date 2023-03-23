@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-""" Function that adds a new attribute to an object if it’s possible """
+"""Module for adding attributes to objects"""
 
 
 def add_attribute(obj, name, value):
-    """ Function for add attribute"""
+     """Function for adding a new attribute to an object if it's possible"""
     if hasattr(obj, '__dict__') is False:
         raise TypeError("can't add new attribute")
 
