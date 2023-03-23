@@ -1,5 +1,10 @@
 #!/usr/bin/python3
+"""Define class LockedClass"""
+
+
 class LockedClass:
+    """attribute called"""
+
     __slots__ = ('first_name',)
 
     def __init__(self):
