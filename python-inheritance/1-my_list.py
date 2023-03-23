@@ -4,7 +4,8 @@
 
 class MyList(list):
     """
-    A subclass of list that adds a print_sorted method to print the list in ascending order.
+    A subclass of list that adds a print_sorted
+     method to print the list in ascending order.
     """
     
     def print_sorted(self):
