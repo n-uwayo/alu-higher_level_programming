@@ -8,6 +8,3 @@ def add_attribute(obj, name, value):
         raise TypeError("can't add new attribute")
 
     setattr(obj, name, value)
-
-# To get information about the module, use the help() function
-help(add_attribute)
