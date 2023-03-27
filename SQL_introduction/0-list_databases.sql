@@ -1,3 +1,3 @@
---script that lists all databases of MySQL server.
-SHOW DATABASES
-
+-- List databases
+-- Query to list all databases
+SHOW DATABASES;
