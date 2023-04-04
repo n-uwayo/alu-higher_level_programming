@@ -18,4 +18,3 @@ if __name__ == "__main__":
     with urllib.request.urlopen(req) as response:
         val = response.read().decode('utf8')
     print(val)
-

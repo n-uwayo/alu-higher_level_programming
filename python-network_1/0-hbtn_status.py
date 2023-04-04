@@ -12,4 +12,3 @@ if __name__ == '__main__':
         print("\t- type: {}".format(type(c)))
         print("\t- content: {}".format(c))
         print("\t- utf8 content: {}".format(c.decode("utf-8"))`)
-
