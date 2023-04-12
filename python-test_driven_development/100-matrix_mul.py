@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-    Module containing matrix multiplication.
-"""
+Module composed by a function that multiplies 2 matrices
 
+"""
 
 def matrix_mul(m_a, m_b):
      """ Multiplies two matrices. Validation of matrices must be done in the
