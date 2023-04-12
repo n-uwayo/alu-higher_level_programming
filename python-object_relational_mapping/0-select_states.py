@@ -11,7 +11,7 @@ if __name__ == '__main__':
     password = sys.argv[2]
     db_name = sys.argv[3]
 
-    #connecting to the database
+    # connecting to the database
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -28,7 +28,6 @@ if __name__ == '__main__':
     for row in cur.fetchall():
         print(row)
 
-    #process of clean up
+    # process of clean up
     cur.close()
     db.close()
-
