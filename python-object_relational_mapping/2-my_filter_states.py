@@ -7,13 +7,14 @@ the states table of hbtn_0e_0_usa where name matches the argument.
 import MySQLdb
 import sys
 
-# The code will not be executed when imported
 if __name__ == '__main__':
+    # Get the command-line arguments for username, password, database name, and state name
     username = sys.argv[1]
     password = sys.argv[2]
     db_name = sys.argv[3]
     state_name = sys.argv[4]
 
+    # Connect to the MySQL database
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -22,19 +23,19 @@ if __name__ == '__main__':
         db=db_name
     )
 
-    # It gives us the ability to have multiple seperate working environments
-    # through the same connection to the database.
+    # Create a cursor object to execute SQL statements
     cur = db.cursor()
 
-    cur.execute("SELECT * FROM states WHERE name
-                LIKE BINARY '{}' ORDER BY id ASC".format(state_name))
+    # Execute a SELECT statement to retrieve all rows where the name matches the state name argument
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id ASC".format(state_name))
 
+    # Fetch all rows returned by the SELECT statement
     rows = cur.fetchall()
 
+    # Print each row to the console
     for row in rows:
         print(row)
 
-    # process of clean up
+    # Clean up resources
     cur.close()
-
     db.close()
