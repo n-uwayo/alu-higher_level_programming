@@ -25,8 +25,7 @@ if __name__ == '__main__':
     # Create a cursor object to execute SQL statements
     cur = db.cursor()
 
-    # Execute a SELECT statement to retrieve all
-    # states starting with N (case-sensitive)
+    # execute a parameterized query to search for the state name
     cur.execute("SELECT * FROM states WHERE name
                 LIKE BINARY 'N%' ORDER BY id ASC")
 

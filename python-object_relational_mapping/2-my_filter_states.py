@@ -8,8 +8,7 @@ import MySQLdb
 import sys
 
 if __name__ == '__main__':
-    # Get the command-line arguments
-    # for username, password, database name, and state name
+    # Retrieve command-line arguments for username, password, database, and state name.
     username = sys.argv[1]
     password = sys.argv[2]
     db_name = sys.argv[3]
@@ -27,8 +26,7 @@ if __name__ == '__main__':
     # Create a cursor object to execute SQL statements
     cur = db.cursor()
 
-    # Execute a SELECT statement to retrieve all
-    # rows where the name matches the state name argument
+    # Fetch all rows with state name matching the provided argument using a SELECT query.
     cur.execute("SELECT * FROM states WHERE name
                 LIKE BINARY '{}' ORDER BY id ASC".format(state_name))
 
