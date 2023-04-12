@@ -78,10 +78,10 @@ def matrix_mul(m_a, m_b):
         raise TypeError("m_b should contain only integers or floats")
 
     if not a_rect:
-        raise TypeError("each row of m_a must should be of the same size")
+        raise TypeError("each row of m_a must be of the same size")
 
     if not b_rect:
-        raise TypeError("each row of m_b must should be of the same size")
+        raise TypeError("each row of m_b must be of the same size")
 
     if a_row_len != b_col_len:
         raise ValueError("m_a and m_b can't be multiplied")
