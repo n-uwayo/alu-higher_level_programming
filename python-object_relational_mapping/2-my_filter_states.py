@@ -1,42 +1,30 @@
 #!/usr/bin/python3
 """
-This script takes in an argument and displays all values in
-the states table of hbtn_0e_0_usa where name matches the argument.
+This script takes in an argument and
+displays all values in the states
+where `name` matches the argument
+from the database `hbtn_0e_0_usa`.
+This time the script is safe from
+MySQL injections!
 """
 
-import MySQLdb
-import sys
+import MySQLdb as db
+from sys import argv
 
-if __name__ == '__main__':
-    # Retrieve command-line arguments for username, password, database, and state name.
-    username = sys.argv[1]
-    password = sys.argv[2]
-    db_name = sys.argv[3]
-    state_name = sys.argv[4]
+if __name__ == "__main__":
+    """
+    Access to the database and get the states
+    from the database.
+    """
+    db_connect = db.connect(host="localhost", port=3306,
+                            user=argv[1], passwd=argv[2], db=argv[3])
 
-    # Connect to the MySQL database
-    db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=username,
-        passwd=password,
-        db=db_name
-    )
+    db_cursor = db_connect.cursor()
+    db_cursor.execute(
+        "SELECT * FROM states WHERE name LIKE \
+                    BINARY %(name)s ORDER BY states.id ASC", {'name': argv[4]})
 
-    # Create a cursor object to execute SQL statements
-    cur = db.cursor()
+    rows_selected = db_cursor.fetchall()
 
-    # Fetch all rows with state name matching the provided argument using a SELECT query.
-    cur.execute("SELECT * FROM states WHERE name
-                LIKE BINARY '{}' ORDER BY id ASC".format(state_name))
-
-    # Fetch all rows returned by the SELECT statement
-    rows = cur.fetchall()
-
-    # Print each row to the console
-    for row in rows:
+    for row in rows_selected:
         print(row)
-
-    # Clean up resources
-    cur.close()
-    db.close()
