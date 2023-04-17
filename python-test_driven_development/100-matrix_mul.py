@@ -1,9 +1,5 @@
 #!/usr/bin/python3
 # function that multiplies 2 matrices
-"""
-    Define 'matrix_mul' function.
-"""
-
 
 def matrix_mul(m_a, m_b):
     """
@@ -15,7 +11,7 @@ def matrix_mul(m_a, m_b):
             new matrix representing the multiplication of m_a by m_b.
     """
 
-      if not all(len(row) == len(m_a[0]) for row in m_a):
+    if not all(len(row) == len(m_a[0]) for row in m_a):
         raise ValueError("m_a must be a matrix")
     if not all(len(row) == len(m_b[0]) for row in m_b):
         raise ValueError("m_b must be a matrix")
@@ -37,6 +33,6 @@ if __name__ == '__main__':
     # Expected output: [[22, 28], [49, 64]]
     try:
         print(matrix_mul([[1, 2], [3, 4, 1]], [[1, 2, 3], [3, 4]]))
-        # Expected output: TypeError: each row of m_a must be of the same size
-    except TypeError as e:
-        print(str(e))  # Expected output: each row of m_a must be of the same size
+        # Expected output: ValueError: m_a must be a matrix
+    except ValueError as e:
+        print(str(e))  # Expected output: m_a must be a matrix
