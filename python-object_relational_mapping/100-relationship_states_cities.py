@@ -12,15 +12,23 @@ if __name__ == "__main__":
     from sqlalchemy.orm import Session
     from sqlalchemy.schema import Table
 
+    # Create the engine and connect to the database
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
                            .format(sys.argv[1], sys.argv[2],
-                                   sys.argv[3]), pool_pre_ping=True)
+                           sys.argv[3]), pool_pre_ping=True)
+    # Create all tables in the engine
     Base.metadata.create_all(engine)
 
     session = Session(engine)
-    new_city = City(name='San Francisco')
+   # Create a new City object with name "San Francisco"
+   new_city = City(name='San Francisco')
+   # Create a new State object with name "California"
     new = State(name='California')
+    # Add the new City object to the new State object's cities list
     new.cities.append(new_city)
+    # Add the new State and City objects to the session
     session.add_all([new, new_city])
+    # Commit the changes to the database
     session.commit()
+    # Close the session
     session.close()
