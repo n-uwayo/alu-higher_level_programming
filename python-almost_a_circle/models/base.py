@@ -1,8 +1,13 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 """base.py
 This module contains a class 'Base'
 """
 
+=======
+""" Create a new class Base """
+from os import path
+>>>>>>> 8a7284d4c0b517caac390be9ec08a90f4a3c55ff
 import json
 import os
 import csv
