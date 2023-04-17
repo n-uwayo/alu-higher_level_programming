@@ -1,14 +1,18 @@
 #!/usr/bin/python3
-# function that multiplies 2 matrices
+"""
+This module defines a function for multiplying two matrices.
+"""
 
 def matrix_mul(m_a, m_b):
     """
-        Multiply two matrices.
-        Args:
-            m_a (list of lists of ints/floats): The first matrix.
-            m_b (list of lists of ints/floats): The second matrix.
-        Return:
-            new matrix representing the multiplication of m_a by m_b.
+    Multiply two matrices.
+    Args:
+        m_a (list of lists of ints/floats): The first matrix.
+        m_b (list of lists of ints/floats): The second matrix.
+    Return:
+        new matrix representing the multiplication of m_a by m_b.
+    Raises:
+        ValueError: if m_a or m_b is not a matrix, or if m_a and m_b cannot be multiplied.
     """
 
     if not all(len(row) == len(m_a[0]) for row in m_a):
