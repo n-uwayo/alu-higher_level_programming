@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Defines a base model class. """
+""" Create a new class Base """
 from os import path
 import json
 
