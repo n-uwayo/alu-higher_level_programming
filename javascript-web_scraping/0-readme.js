@@ -1,0 +1,12 @@
+#!/usr/bin/node
+
+const fs = require('fs');
+const argiments = process.argv[2];
+
+fs.readFile(argiments, 'utf-8', (err, data) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(data.toString());
+  }
+});
