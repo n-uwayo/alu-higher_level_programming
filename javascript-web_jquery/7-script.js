@@ -1,5 +1,10 @@
-$.getJSON('https://swapi-api.hbtn.io/api/people/5/?format=json',
-  function (data) {
-    $('#character').text(data.name);
-  }
-);
+(function () {
+  $.ajax({
+    url: 'https://swapi-api.alx-tools.com/api/people/5/?format=json',
+    method: 'GET',
+    success: function (data) {
+      const characterName = data.name;
+      $('#character').text(characterName);
+    }
+  });
+});

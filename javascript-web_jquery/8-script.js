@@ -1,5 +1,14 @@
-$.getJSON('https://swapi-api.hbtn.io/api/films/?format=json', function (data) {
-  $.each(data.results, function (index, movie) {
-    $('#list_movies').append('<li>' + movie.title + '</li>');
+(function () {
+  $.ajax({
+    url: 'https://swapi-api.alx-tools.com/api/films/?format=json',
+    method: 'GET',
+    success: function (data) {
+      const movies = data.results;
+      const list = $('#list_movies');
+      $.each(movies, function (index, movie) {
+        const title = movie.title;
+        list.append('<li>' + title + '</li>');
+      });
+    }
   });
 });
